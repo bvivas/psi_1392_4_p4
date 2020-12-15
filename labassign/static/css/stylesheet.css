@@ -1,0 +1,163 @@
+			* {
+				box-sizing: border-box;
+			}            
+
+			.topnav {
+				position: fixed;
+	  			margin: 0;
+	  			padding: 0;
+      			width: 15%;
+      			padding: 20px;
+	  			overflow: auto;
+	  			list-style-type: none;
+				font-family: Helvetica, sans-serif;
+				font-size: 17px;
+            }
+
+			.topnav ul {
+				list-style-type: none;
+				padding: 10px;
+			}
+			
+			li {
+				margin: 5%;
+			}
+
+            section:after {
+				content: "";
+  				display: table;
+  				clear: both;
+			}
+
+            #loginart {
+                margin-left: 40%;
+				margin-right: 40%;
+				padding-top: 30px;
+				padding-bottom: 30px;
+				font-family: Helvetica, sans-serif;
+            }
+            #submit {
+                margin-left: 35%;
+				border-color: #ff8c1a;
+				border-radius: 5px;
+				padding: 7px;
+				background-color: white;
+            }
+
+			#submit:hover {
+				cursor: pointer;
+			}
+
+			.logoutbutton {
+                margin-left: 35%;
+				border-color: #ff8c1a;
+				border-radius: 5px;
+				padding: 7px;
+				background-color: white;
+            }
+
+			.logoutbutton:hover {
+				cursor: pointer;
+			}
+
+			.applybutton {
+				border-color: #ff8c1a;
+				border-radius: 5px;
+				padding: 7px;
+				background-color: white;
+			}
+
+			.applybutton:hover {
+				cursor: pointer;
+			}
+
+			#homeart {
+				float: right;
+      			padding: 35px;
+      			width: 85%;
+      			border-left: 3pt solid black;
+	  			border-right: 3pt solid black;
+	  			height: 100%;
+	 			padding-bottom: 20px;
+				font-family: Helvetica, sans-serif;
+				font-size: 17px;
+			}
+
+			.applyart {
+				float: right;
+      			padding: 35px;
+      			width: 85%;
+      			border-left: 3pt solid black;
+	  			border-right: 3pt solid black;
+	  			height: 100%;
+	 			padding-bottom: 200px;
+				font-family: Helvetica, sans-serif;
+				font-size: 17px;
+			}
+
+			.helpart {
+				float: right;
+      			padding: 20px;
+      			width: 85%;
+      			border-left: 3pt solid black;
+	  			border-right: 3pt solid black;
+	  			height: 100%;
+	 			padding-bottom: 20px;
+				font-family: Helvetica, sans-serif;
+				font-size: 17px;
+			}
+
+			a {
+				text-decoration: none;
+				color: #0000e6;
+			}
+
+			a:hover {
+				color: #56ADEA;
+			}
+
+			li > a {
+				color: black;
+			}
+
+			.title {
+				font-family: Helvetica, sans-serif;
+				font-size: 30px;
+			}
+            #homeart > input, .applyart > input {
+                border: None;
+            }
+            .pairname {
+                padding-right: 20px;
+            }
+            .pairval {
+                padding-left: 20px;
+            }
+            #student1 {
+                border: none;
+            }
+			hr {
+				border: 1px dashed #ff8c1a;
+				
+			}
+			header {
+				background-color: #ffe6cc;
+                color: black;
+                text-align: center;
+                padding: 20px;
+				font-family: DejaVu Sans Mono, monospace;
+				font-weight: bold;
+				font-size: 40px;
+				border-bottom: 3px solid #ff8c1a;
+				background-image: linear-gradient(#fff5cc, #ffe6cc);
+			}
+            footer {
+                background-color: #ffe6cc;
+                color: black;
+                text-align: center;
+                padding: 10px;
+				font-family: DejaVu Sans Mono, monospace;
+				font-weight: bold;
+				border-top: 3px solid #ff8c1a;
+				background-image: linear-gradient(#ffe6cc, #fff5cc);
+            }

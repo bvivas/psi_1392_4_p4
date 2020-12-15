@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% load staticfiles %}
+{% block title_block %}
+    Convalidation
+{% endblock %}
+{% block body_block %}
+    <article class="applyart">
+        <h2>Request convalidation:</h2>
+        <p>Let's see if you satisfy the requirements:</p>
+        {% if canRequest %}
+            {%if satisfy %}
+                <p>You satisfy them.</p>
+            {% else %}
+                <p>You do not satify them.</p>
+            {% endif %}
+                <p>Your grades are: </p><br>
+                <label for="th">Theory: </label>
+                <input type="text" value="{{ thGrade }}"><br>
+                <label for="lab">Lab: </label>
+                <input type="text" value="{{ labGrade }}"><br><br>
+        {% else %}
+            <p>You cannot request convalidation. {{ message }}</p>
+        {% endif %}
+    </article>
+{% endblock %}

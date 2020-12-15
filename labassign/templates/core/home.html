@@ -1,0 +1,60 @@
+{% extends 'core/base.html' %}
+
+{% load staticfiles %}
+{% block title_block %}
+    Home
+{% endblock %}
+{% block body_block %}
+    <article id="homeart">
+		<h1 class="title">EDAT course partner selection</h1>
+		<hr>
+        {% if user.is_authenticated %}
+            <h2>Summary page for <b>{{ name }}</b>:</h2>
+            {% if val_status == True %}
+                <p>Your convalidation has already been granted. Congratulations.</p>
+            {% else %}
+                <p>Your convalidation hasn't been granted yet or you haven't applied for it. <br>To apply for a convalidation from 
+                    previous years, please go to <a href="{% url 'core:convalidation' %}">convalidation</a>
+                </p>
+            {% endif %}
+            <br>
+            {% if labGroup == None %}
+                <p>You haven't yet requested a laboratory group. If you want to request one, please go to 
+                    <a href="{% url 'core:applygroup' %}">laboratory group requests.</a>
+                </p>
+            {% else %}
+                <p>You already belong to the laboratory group {{labGroup }}.</p>
+            {% endif %}
+            <br>
+            <form method="post" action="{% url 'core:logout' %}">
+                {% csrf_token %}
+                <input type="submit" class="logoutbutton" value="Log Out">
+            </form><br><br>
+            <h2>Pair information: </h2>
+            <p>The following pairs are the ones pending to be validated. If you want to apply for a new pair or haven't yet 
+                applied, please go to <a href="{% url 'core:applypair' %}">pair applying.</a>
+            </p>
+            <table>
+                <tr>
+                    <th>Pair</th>
+                    <th>Validated</th>
+                </tr>
+                {% for pair in pairs %}
+                    <tr>
+                        <td class="pairname">{{ pair }}</td>
+                        <td class="pairval">{{ pair.validated }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <br><br>
+        {% else %}
+            <h2>Select practice group:</h2>
+            <div>
+                <p>Step 1: <a href="{% url 'core:login_help' %}">login</a></p>
+                <p>Step 2: <a href="{% url 'core:convalidation_help' %}">Convalidate practices from previous years</a></p>
+                <p>Step 3: <a href="{% url 'core:pair_help' %}">Choose a partner</a></p>
+                <p>Step 4: <a href="{% url 'core:group_help' %}">Choose a laboratory group</a></p>
+            </div>
+        {% endif %}
+    </article>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% load staticfiles %}
+{% block title_block %}
+    Apply Pair
+{% endblock %}
+{% block body_block %}
+    <article class="applyart">
+	<h2>Choosing a partner for EDAT laboratories: </h2>
+        {% if canApply == False %}
+            <p>User has already selected a pair.</p>
+        {% else %}
+            <form id="pairform" method="post" action="{% url 'core:applypair' %}">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" class="applybutton" name="submit" value="Request pair">
+            </form>
+            <br>
+        {% endif %}
+    </article>
+{% endblock %}

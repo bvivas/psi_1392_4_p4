@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+
+{% load staticfiles %}
+{% block title_block %}
+    Login
+{% endblock %}
+{% block body_block %}
+    <article id="loginart">
+        <h2>Please login | Por favor autentiquese: </h2>
+        {% if errormsg %}
+            <p>{{ errormsg }}</p>
+        {% else %}
+            <form style="padding-bottom: 20px;" method="post" action="{% url 'core:login' %}">
+                {% csrf_token %}
+                <label for="username">Username: </label>
+                <input type="text" name="username"><br></br>
+                <label for="password">Password: </label>
+                <input type="password" name="password"><br></br>
+                <input type="submit" id="submit" value="Enter">
+            </form>
+        {% endif %}
+    </article>
+{% endblock %}

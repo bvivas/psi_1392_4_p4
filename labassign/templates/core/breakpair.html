@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% load staticfiles %}
+{% block title_block %}
+    Break Pair
+{% endblock %}
+{% block body_block %}
+    <article class="applyart">
+	<h2>Break pair</h2>
+        {% if errormsg %}
+            <p>{{ errormsg }}</p>
+        {% else %}
+            <form id="bpform" method="post" action="{% url 'core:breakpair' %}">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" class="applybutton" value="Break pair">
+            </form>
+        {% endif %}
+    </article>
+{% endblock %}

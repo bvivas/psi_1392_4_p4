@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% load staticfiles %}
+{% block title_block %}
+    Apply Group
+{% endblock %}
+{% block body_block %}
+    <article class="applyart">
+	<h2>Laboratory group selection</h2>
+        {% if errormsg %}
+            <p>{{ errormsg }}</p>
+        {% else %}
+            <form id="groupform" method="post" action="{% url 'core:applygroup' %}">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" class="applybutton" value="Submit">
+            </form>
+            <br><br>
+        {% endif %}
+    </article>
+{% endblock %}
